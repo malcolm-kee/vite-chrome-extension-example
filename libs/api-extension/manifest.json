@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Vite Chrome Extension",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/content.ts"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*",
+        "*://localhost/*",
+        "*://127.0.0.1/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "permissions": ["activeTab"],
+  "externally_connectable": {
+    "matches": ["*://localhost/*", "*://127.0.0.1/*"]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApNor0B3KUBgeJsRKFrU0Y9oAQqDDSV5MaCZltnURws1kI4QoUjVKFDN40N1FrYY5kLEAsFHLtXU2kAz3UOiDaphP4EKnNmX1+Q/wO1OO4DPH3ToWke2p1b/EAc+5uqzPC57lWCpBc7E1iJfOjAW9EGYtO9//T1N++s3+pw00jU6N4K1zRerDMmUrBJp6+5C9Hzuz+OeP3Sh3D+OrIAxifikwS6sr5Tf78t+ujIWI1pSBIjWkVRZwQhzHegN4myEIxsK0nvAZG0MG/NWM6BUG3PRlJ3wT43VtlsrVwS9sgwxlf2JljWxtJ0BFNlmqtzL4pvSBO7QOZgOjcAMaeufvOwIDAQAB"
+}

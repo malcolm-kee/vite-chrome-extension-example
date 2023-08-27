@@ -1,0 +1,9 @@
+{
+  "name": "vite-chrome-extension-example",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm -r --stream --parallel run dev",
+    "build": "pnpm -r run build"
+  }
+}
